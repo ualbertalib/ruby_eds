@@ -1,7 +1,6 @@
 require 'rest-open-uri'
 require 'nokogiri'
 require 'rest-client'
-require 'pp'
 
 # This module is based on Nitin Arora's Python binding for the EDS API.
 # It provides more or less the same interface, allowing users to:
@@ -18,6 +17,7 @@ require 'pp'
 #  - add more options to basicSearch() like "facets", "search mode", "fulltext", "thesaurus", etc.
 #  - consider adding an authenticateIP() function that uses the IP authentication method.
 #  - deal with expired tokens, etc.
+#  - change argument lists to argument hashes to conform to ruby style.
 
 # Sam Popowich, Sam.Popowich@ualberta.ca
 
@@ -56,8 +56,4 @@ module RubyEDS
   def advanced_search(search_json, return_type="xml")
   end
  
-  def pretty_print(content) # content can be either XML or JSON
-    pp content
-  end
-
 end
