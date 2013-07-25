@@ -44,5 +44,6 @@ class TestRubyEDS < Test::Unit::TestCase
     doc.remove_namespaces!
     number_of_hits = doc.xpath("//TotalHits").inner_text || 0
     assert_not_equal 0, number_of_hits
+    pp doc
   end
 end

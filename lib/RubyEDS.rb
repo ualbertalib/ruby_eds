@@ -12,7 +12,7 @@ require 'pp'
 #
 # There are, however a few changes:
 #  - I removed the authenticate_with_file method, as you can use a config to provide credentials anyway (see examples)
-   - I allowed for both XML and JSON return types (with the default being XML).
+#   - I allowed for both XML and JSON return types (with the default being XML).
 #
 # As with Nitin's PyEDS, there are a few things left to do:
 #  - add more options to basicSearch() like "facets", "search mode", "fulltext", "thesaurus", etc.
@@ -57,6 +57,7 @@ module RubyEDS
   end
  
   def pretty_print(content) # content can be either XML or JSON
+    pp content
   end
 
 end
