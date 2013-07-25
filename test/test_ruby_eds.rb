@@ -26,4 +26,23 @@ class TestRubyEDS < Test::Unit::TestCase
     success = close_session @session_token, @auth_token
     assert_equal "y", success
   end
+
+  def test_info_is_not_nil
+    auth_token = authenticate_user(@args['username'], @args['password'])
+    session_token = open_session(@args['profile'], @args['guest'], auth_token)
+    response = get_info(session_token, auth_token)   
+    close_session(session_token, auth_token)
+    assert_not_nil response
+  end
+
+  def test_basic_search
+    auth_token = authenticate_user(@args['username'], @args['password'])
+    session_token = open_session(@args['profile'], @args['guest'], auth_token)
+    results = basic_search("shakespeare", session_token, auth_token)
+    close_session(session_token, auth_token)
+    doc = Nokogiri::XML(results)
+    doc.remove_namespaces!
+    number_of_hits = doc.xpath("//TotalHits").inner_text || 0
+    assert_not_equal 0, number_of_hits
+  end
 end
