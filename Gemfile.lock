@@ -1,9 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    mime-types (1.23)
     mini_portile (0.5.1)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rest-open-uri (1.0.0)
 
 PLATFORMS
@@ -11,4 +14,5 @@ PLATFORMS
 
 DEPENDENCIES
   nokogiri
+  rest-client
   rest-open-uri (~> 1.0.0)
