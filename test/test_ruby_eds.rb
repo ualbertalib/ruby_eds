@@ -1,13 +1,13 @@
 require 'test/unit'
 require "../lib/RubyEDS.rb"
-require "./config_module.rb"
+require "../lib/config_module.rb"
 
 class TestRubyEDS < Test::Unit::TestCase
   include RubyEDS
   include ConfigModule
 
   def setup
-    @args = get_vars('../util.conf')
+    @args = get_vars('../lib/util.conf')
   end
 
   def test_authentication_token_is_not_nil
@@ -44,6 +44,5 @@ class TestRubyEDS < Test::Unit::TestCase
     doc.remove_namespaces!
     number_of_hits = doc.xpath("//TotalHits").inner_text || 0
     assert_not_equal 0, number_of_hits
-    pp doc
   end
 end
