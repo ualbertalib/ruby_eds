@@ -1,5 +1,5 @@
 require 'test/unit'
-require "../lib/RubyEDS.rb"
+require "../lib/ruby_eds.rb"
 require "../lib/config_module.rb"
 
 class TestRubyEDS < Test::Unit::TestCase
