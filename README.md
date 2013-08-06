@@ -19,6 +19,7 @@ As with Nitin's PyEDS, there are a few things left to do:
  - consider adding an authenticateIP() function that uses the IP authentication method.
  - deal with expired tokens, etc.
  - change argument lists to argument hashes to conform to ruby style.
+ - use something like the fakeweb gem to avoid hitting the API during tests.
 
 Sam Popowich, Sam.Popowich@ualberta.ca
 
